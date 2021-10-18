@@ -1,1 +1,1 @@
-HTML parctice, introducing some of my design works.
+HTML practice, introducing some of my design works.
