@@ -1,1 +1,1 @@
-# str2-sajat-munka
+HTML parctice, introducing some of my design works.
