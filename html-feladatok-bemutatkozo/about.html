@@ -65,15 +65,15 @@
         <form>
             <div>
                 <label for="nameOf">Name:</label><br>
-                <input type="text" id="nameOf" name="nameOf" required>
+                <input type="text" minlength="5" id="nameOf" name="nameOf" required>
             </div>
             <div>
                 <label for="email">Email:</label><br>
-                <input type="text" id="email" name="email" required>
+                <input type="email" id="email" name="email" required>
             </div>
             <div>
                 <label for="message">Message:</label><br>
-                <textarea type="text" id="message" name="message" rows="5" required></textarea>
+                <textarea type="text" minlength="20" id="message" name="message" rows="5" required></textarea>
             </div>
         </form>
         <button class="btn-form" id="btn-submit">SUBMIT</button>
