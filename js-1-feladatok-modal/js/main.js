@@ -1,28 +1,29 @@
 let modal = document.getElementById('modal');
 
 const openModal = () => {
+    modal.classList.remove('fadeOut');
     modal.classList.add('fadeIn');
 
-    document.querySelector('.fadeIn').addEventListener('animationend', () => {
-        modal.classList.remove('fadeIn');
-    });
-
-    modal.style.display = 'block';
+    modal.style.display = 'inline';
     modal.focus();
 
     document.getElementById('overlay').style.visibility = 'visible';
 }
 
 const closeModal = () => {
+    document.getElementById('modal').style.display = 'none';
+    document.getElementById('overlay').style.visibility = 'hidden';
+}
+
+const fadeOutAnim = () => {
     modal.classList.add("fadeOut");
 
     document.querySelector('.fadeOut').addEventListener('animationend', () => {
         modal.classList.remove('fadeOut');
-    });
-
-    document.getElementById('modal').style.display = 'none';
-    document.getElementById('overlay').style.visibility = 'hidden';
+    });    
 }
+
+
 
 document.getElementById('openbtn').addEventListener('click', function () {
     openModal();
@@ -33,7 +34,8 @@ document.getElementById('openbtn').addEventListener('click', function () {
             event.target === document.querySelector('.overlay') ||
             event.target === document.querySelectorAll(".closebtn")
         ) {
-            closeModal();
+            setTimeout(closeModal, 900);
+            fadeOutAnim();
         }
     })
 })
