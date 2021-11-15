@@ -95,9 +95,7 @@ majd kattintásra (esemény) eltávolítja a handleClick függvényt.
 */
 const modifyCell = (element) => {
     element.textContent = mark;
-    cells.addEventListener('click', () =>
-        element.remove(handleClick())
-    )
+    element.removeEventListener('click', handleClick)
 };
 
     /**
@@ -134,8 +132,7 @@ const modifyCell = (element) => {
     és kattintásra (esemény) mindegyikhez hozzáadja a handleClick függvényt.
     */
     const addClickListener = () => {
-        cells.addEventListener('click', () =>
-            cells.add(handleClick()))
+        cells.forEach(element => element.addEventListener('click', handleClick))
     };
 
     /**
@@ -144,10 +141,8 @@ const modifyCell = (element) => {
     és kattintásra (esemény) mindegyikről eltávolítja a handleClick függvényt.
     */
     const removeAllClickListeners = () => {
-        cells.addEventListener('click', () => 
-            cells.remove(handleClick())
-        )
-    };
+        cells.forEach(element => element.removeEventListener('click', handleClick)) 
+    }
 
     /**
     Fejtsd ki a checkValues elnevezésű függvényt, 
