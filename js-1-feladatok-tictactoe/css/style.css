@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+}
+
+.playground {
+    background-color: #f7ef02;
+    width: 300px;
+    height: 300px;
+    font-family: 'Architects Daughter', cursive;
+    color: #2f02f7;
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+}
+
+.cell {
+    border: 1px solid beige;
+    width: 100px;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+.btn {
+    background-color: lightblue;
+    color: white;
+    border: none;
+    border-radius: 0.25em;
+    padding: 1.5em 2em;
+    margin-top: 2rem;
+}
+
+.message {
+    font-family: 'Roboto', sans-serif;
+}
