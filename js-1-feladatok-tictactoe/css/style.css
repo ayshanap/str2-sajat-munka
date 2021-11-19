@@ -12,10 +12,14 @@ body {
     height: 300px;
     font-family: 'Architects Daughter', cursive;
     font-size: 4em;
-    color: #2f02f7;
+    color: coral;
     margin: 0 auto;
     padding: 0;
     text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 .cell {
@@ -25,7 +29,7 @@ body {
     margin: 0;
     padding: 0;
     text-align: center;
-    display: inline-block;
+    
 }
 
 .btn {
