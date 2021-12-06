@@ -7,13 +7,13 @@ const state = ['Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colora
     'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia',
     'Wisconsin', 'Wyoming'];
 
-const fillCountry = (country) => {
-    const countryOptions = country.map(item => {return `<option>${item}</option>`});
-    return countryOptions;
+const fillOptions = (arr) => {
+    const options = arr.map(item => {return `<option>${item}</option>`});
+    return options;
 }
 
 let countryHTML = document.querySelector('#country');
-countryHTML.insertAdjacentHTML('beforeEnd', fillCountry(country));
+countryHTML.insertAdjacentHTML('beforeEnd', fillOptions(country));
 
 let stateHTML = document.querySelector('#state');
-stateHTML.insertAdjacentHTML('beforeend', fillCountry(state));
+stateHTML.insertAdjacentHTML('beforeend', fillOptions(state));
