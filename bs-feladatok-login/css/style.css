@@ -1,0 +1,12 @@
+#icon {
+    background-color: #fae820;
+    width: 3.6rem;
+    height: 3.6rem;
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+    font-size: 2.4rem;
+}
