@@ -1,0 +1,189 @@
+#navbar-brand {
+    font-family: 'Catamaran', Helvetica, Arial, sans-serif;
+    color: #fdcc52;
+}
+
+#navbar-brand:hover {
+    color: white;
+}
+
+.nav-item {
+    text-transform: uppercase;
+}
+
+#navbar-lg {
+    display: none;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100vw;
+    padding: 0;
+}
+
+#navbar-small {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100vw;
+    padding: 0;
+}
+
+@media only screen and (min-width: 992px) {
+    #navbar-small {
+        display: none;
+    }
+    
+    #navbar-lg {
+        display: block;
+    }
+}
+
+#start {
+    background-image: url('../img/bg-pattern.png'), linear-gradient(90deg, #de494d, #7d4397);
+    background-repeat: repeat;
+    font-family: 'Catamaran', Helvetica, Arial, sans-serif;
+    font-weight: 300;
+}
+
+@media only screen and (min-width: 992px) {
+    #start-text {
+        font-size: 2.5rem;
+    }
+
+    #phone {
+        background-size: cover;
+    }
+}
+
+#phone {
+    background-image: url(../img/phone.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 0 !important;
+}
+
+#phone img {
+    padding: 15% 20%;
+    width: 90vw;
+    display: inline;
+}
+
+#phone-unlimited {
+    background-image: url(../img/phone.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    padding: 0 !important;
+}
+
+#phone-unlimited img {
+    padding: 15% 20%;
+    width: 90vw;
+    display: inline;
+}
+
+#discover {
+    background-color: #fdcc52;
+}
+
+#discover p {
+    font-size: 3rem;
+}
+
+@media only screen and (min-width: 992px) {
+    #discover img {
+        height: 10vh;
+    }
+
+    #discover p {
+        font-size: 4rem;
+    }
+
+    #phone-unlimited{
+    }
+}
+
+btn {
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+}
+
+#discover img {
+    width: 40vw;
+}
+
+#unlimited p {
+    font-size: 3rem;
+}
+
+@media only screen and (min-width: 992px) {
+    #discover p {
+        font-size: 4rem;
+    }
+
+    #stop-waiting p {
+        font-size: 4rem;
+    }
+
+    .unlimited #phone {
+        height: 100%;
+    }
+}
+
+.iconify {
+    color: #ae3264;
+    font-size: 4rem;
+}
+
+@media only screen and (min-width: 992px) {
+    #unlimited blockquote p {
+        font-size: 4rem;
+    }
+
+    #unlimited p {
+        font-size: 1rem;
+    }
+}
+
+#unlimited p {
+    font-size: 1rem;
+}
+
+#stop-waiting {
+    background-image:linear-gradient(rgba(0, 0, 0, 0.45), 
+    rgba(0, 0, 0, 0.45)), url('../img/bg-cta.jpg');
+    background-size: cover;
+}
+
+
+#stop-waiting button {
+    font-size: 0.5rem;
+    margin-left: 3rem !important;
+}
+
+#friends {
+    background-color: #fdcc52;
+}
+
+#friends i {
+    color: red;
+}
+
+#friends p {
+    font-size: 2rem !important;
+    padding-bottom: 0 !important;
+}
+
+#footer {
+    background-color: #222;
+    color: white;
+}
+
+#footer a {
+    text-decoration: none;
+    color: white;
+}
+
+#footer a:hover {
+    color: #fdcc52;
+}
