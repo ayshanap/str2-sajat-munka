@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 6rem;
+    color: white;
+    text-transform: uppercase;
+}
+
+.container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    flex-direction: column;
+    background:lightsteelblue;
+}
+
+.deck {
+	width: 85%;
+	padding: 1rem;
+	border-radius: 4px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	margin: 0 0 3em;
+}
+
+.card {
+	height: 30vh;
+	width: 17%;
+	min-width: 110px;
+	margin: 1vw 1vh;
+	background: #f7ee72;
+    border: 6px solid #f7ee72;
+	border-radius: 25px;
+    font-size: 0;
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+.deck .card.show {
+	font-size: 6rem;
+	background: #fff;
+    border: 6px solid #f7ee72;
+}
+
+.deck .card.match {
+	cursor: default;
+}
+
+.timer {
+	display: inline-block;
+	margin: 0 1rem;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 4rem;
+	color: white;
+}
+
+.overlay {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.7);
+	transition: opacity 500ms;
+	visibility: hidden;
+	opacity: 0;
+}
+
+#play {
+	background-color: #f7ee72;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2rem;
+	color: steelblue;
+	padding: 2rem;
+	border-radius: 1rem;
+	border: none;
+	margin-bottom: 3rem;
+	cursor: pointer;
+	box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+}
+
+#play:hover {
+	background-color: #faed39;
+}
