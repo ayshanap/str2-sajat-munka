@@ -1,4 +1,4 @@
-const gotURL = '../json/got.json';
+const gotURL = './json/got.json';
 
 const getData = async () => {
     const data = await fetch(gotURL).then(r => r.json());
@@ -40,7 +40,7 @@ const fillCharacters = async () => {
         charDiv.appendChild(charName);
         charName.textContent = char.name;
 
-        charDiv.addEventListener('click', charDetail /*function () {
+        charDiv.addEventListener('click', function () {
             const charDetailDiv = document.querySelector('.char-details');
             charDetailDiv.innerHTML = "";
             charDetailDiv.style.visibility = "visible";
@@ -60,43 +60,90 @@ const fillCharacters = async () => {
                 const house = document.createElement("img");
                 house.classList.add("house");
                 charDetailHeader.appendChild(house);
-                house.src = `../assets/houses/${char.house}.png`;
+                house.src = `./assets/houses/${char.house}.png`;
             }
 
             const charDescr = document.createElement("p");
             charDetailDiv.appendChild(charDescr);
             charDescr.textContent = char.bio;
-        }*/);
+        });
     });
     return sortedChars;
 };
 
-const charDetail = (char) => {
-    const charDetailDiv = document.querySelector('.char-details');
-            charDetailDiv.innerHTML = "";
-            charDetailDiv.style.visibility = "visible";
-            const charDetailImg = document.createElement("img");
-            charDetailImg.src = char.picture;
-            charDetailImg.alt = char.name;
-            charDetailDiv.appendChild(charDetailImg);
-            charDetailImg.classList.add("detail-img");
-            const charDetailHeader = document.createElement("div");
-            charDetailDiv.appendChild(charDetailHeader);
-            const detailName = document.createElement("h3");
-            charDetailHeader.appendChild(detailName);
-            charDetailHeader.classList.add("char-details-head")
-            detailName.textContent = char.name;
+/*const charDetail = async () => {
+    const sortedChars = await sortCharacters();
+    sortedChars.forEach(char => {
+        const charDetailDiv = document.querySelector('.char-details');
+        charDetailDiv.innerHTML = "";
+        charDetailDiv.style.visibility = "visible";
+        const charDetailImg = document.createElement("img");
+        charDetailImg.src = char.picture;
+        charDetailImg.alt = char.name;
+        charDetailDiv.appendChild(charDetailImg);
+        charDetailImg.classList.add("detail-img");
+        const charDetailHeader = document.createElement("div");
+        charDetailDiv.appendChild(charDetailHeader);
+        const detailName = document.createElement("h3");
+        charDetailHeader.appendChild(detailName);
+        charDetailHeader.classList.add("char-details-head")
+        detailName.textContent = char.name;
 
-            if (char.house) {
-                const house = document.createElement("img");
-                house.classList.add("house");
-                charDetailHeader.appendChild(house);
-                house.src = `../assets/houses/${char.house}.png`;
+        if (char.house) {
+            const house = document.createElement("img");
+            house.classList.add("house");
+            charDetailHeader.appendChild(house);
+            house.src = `./assets/houses/${char.house}.png`;
+        }
+
+        const charDescr = document.createElement("p");
+        charDetailDiv.appendChild(charDescr);
+        charDescr.textContent = char.bio;
+    })
+};*/
+
+const searchInput = document.querySelector(".input-field");
+
+const search = async () => {
+    const sortedChars = await sortCharacters();
+    searchInput.addEventListener('search', function () {
+        console.log(searchInput.value);
+        sortedChars.forEach(char => {
+            
+            if (char.name.toLowerCase().includes(searchInput.value.toLowerCase())) {
+                
+                const charDetailDiv = document.querySelector('.char-details');
+                charDetailDiv.innerHTML = "";
+                charDetailDiv.style.visibility = "visible";
+                const charDetailImg = document.createElement("img");
+                charDetailImg.src = char.picture;
+                charDetailImg.alt = char.name;
+                charDetailDiv.appendChild(charDetailImg);
+                charDetailImg.classList.add("detail-img");
+                const charDetailHeader = document.createElement("div");
+                charDetailDiv.appendChild(charDetailHeader);
+                const detailName = document.createElement("h3");
+                charDetailHeader.appendChild(detailName);
+                charDetailHeader.classList.add("char-details-head")
+                detailName.textContent = char.name;
+
+                if (char.house) {
+                    const house = document.createElement("img");
+                    house.classList.add("house");
+                    charDetailHeader.appendChild(house);
+                    house.src = `./assets/houses/${char.house}.png`;
+                }
+
+                const charDescr = document.createElement("p");
+                charDetailDiv.appendChild(charDescr);
+                charDescr.textContent = char.bio;
+            } else {
+                const charDetailDiv = document.querySelector('.char-details');
+                charDetailDiv.textContent = "Character not found.";
             }
-
-            const charDescr = document.createElement("p");
-            charDetailDiv.appendChild(charDescr);
-            charDescr.textContent = char.bio;
+        });
+    });
 };
 
 fillCharacters();
+search();
