@@ -108,40 +108,40 @@ const search = async () => {
     const sortedChars = await sortCharacters();
     searchInput.addEventListener('search', function () {
         console.log(searchInput.value);
-        sortedChars.forEach(char => {
-            
-            if (char.name.toLowerCase().includes(searchInput.value.toLowerCase())) {
-                
-                const charDetailDiv = document.querySelector('.char-details');
-                charDetailDiv.innerHTML = "";
-                charDetailDiv.style.visibility = "visible";
-                const charDetailImg = document.createElement("img");
-                charDetailImg.src = char.picture;
-                charDetailImg.alt = char.name;
-                charDetailDiv.appendChild(charDetailImg);
-                charDetailImg.classList.add("detail-img");
-                const charDetailHeader = document.createElement("div");
-                charDetailDiv.appendChild(charDetailHeader);
-                const detailName = document.createElement("h3");
-                charDetailHeader.appendChild(detailName);
-                charDetailHeader.classList.add("char-details-head")
-                detailName.textContent = char.name;
+        const searchChar = sortedChars.filter(char =>
+            char.name.toLowerCase().includes(searchInput.value.toLowerCase()));
 
-                if (char.house) {
-                    const house = document.createElement("img");
-                    house.classList.add("house");
-                    charDetailHeader.appendChild(house);
-                    house.src = `./assets/houses/${char.house}.png`;
-                }
+        if (searchChar[0]) {
 
-                const charDescr = document.createElement("p");
-                charDetailDiv.appendChild(charDescr);
-                charDescr.textContent = char.bio;
-            } else {
-                const charDetailDiv = document.querySelector('.char-details');
-                charDetailDiv.textContent = "Character not found.";
+            const charDetailDiv = document.querySelector('.char-details');
+            charDetailDiv.innerHTML = "";
+            charDetailDiv.style.visibility = "visible";
+            const charDetailImg = document.createElement("img");
+            charDetailImg.src = searchChar[0].picture;
+            charDetailImg.alt = searchChar[0].name;
+            charDetailDiv.appendChild(charDetailImg);
+            charDetailImg.classList.add("detail-img");
+            const charDetailHeader = document.createElement("div");
+            charDetailDiv.appendChild(charDetailHeader);
+            const detailName = document.createElement("h3");
+            charDetailHeader.appendChild(detailName);
+            charDetailHeader.classList.add("char-details-head")
+            detailName.textContent = searchChar[0].name;
+
+            if (char.house) {
+                const house = document.createElement("img");
+                house.classList.add("house");
+                charDetailHeader.appendChild(house);
+                house.src = `./assets/houses/${searchChar[0].house}.png`;
             }
-        });
+
+            const charDescr = document.createElement("p");
+            charDetailDiv.appendChild(charDescr);
+            charDescr.textContent = searchChar[0].bio;
+        } else {
+            const charDetailDiv = document.querySelector('.char-details');
+            charDetailDiv.textContent = "Character not found.";
+        }
     });
 };
 
