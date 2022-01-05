@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+  }
+
 #navbar-brand {
     font-family: 'Catamaran', Helvetica, Arial, sans-serif;
     color: #fdcc52;
@@ -8,50 +12,121 @@
 }
 
 .nav-item {
+    font-family: 'Catamaran', Helvetica, Arial, sans-serif;
     text-transform: uppercase;
 }
 
-#navbar-lg {
-    display: none;
-    position: sticky;
+.nav-link:hover {
+    color: #fdcc52 !important;
+}
+
+.navbar-lg {
+    width: 100vw;
+    position: fixed;
     top: 0;
     z-index: 100;
     width: 100vw;
     padding: 0;
+    background-color: transparent;
+    display: none;
 }
 
 #navbar-small {
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 100;
     width: 100vw;
     padding: 0;
+    display: block;
 }
 
 @media only screen and (min-width: 992px) {
     #navbar-small {
         display: none;
     }
+
+    #navbar-brand-lg {
+        font-family: 'Catamaran', Helvetica, Arial, sans-serif;
+        color: #fdcc52;
+    }
     
     #navbar-lg {
         display: block;
     }
+
+    .nav-item-lg {
+        font-family: 'Catamaran', Helvetica, Arial, sans-serif;
+        text-transform: uppercase;
+    }
+
+    .nav-link-lg {
+        color: white;
+    }
+
+    h3 {
+        font-family: 'Catamaran', Helvetica, Arial, sans-serif;
+        font-size: 3rem;
+        line-height: 4rem !important;
+        font-weight: 100;
+    }
 }
 
 #start {
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
     background-image: url('../img/bg-pattern.png'), linear-gradient(90deg, #de494d, #7d4397);
     background-repeat: repeat;
+}
+
+h3 {
     font-family: 'Catamaran', Helvetica, Arial, sans-serif;
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+    font-weight: 100;
+}
+
+.btn {
+    font-family: 'Lato', Helvetica, Arial, sans-serif;
+    text-transform:uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.1rem;
+}
+
+.btn:hover {
+    background-color: #fdcc52;
+    border: 1px solid #fdcc52;
+    color: white;
+}
+
+h1 {
+    font-family: 'Catamaran', Helvetica, Arial, sans-serif;
+    font-size: 3rem;
     font-weight: 300;
+    padding: 0.7rem;
+}
+
+p {
+    font-family: 'Mulish', Helvetica, Arial, sans-serif;
+    font-size: 1rem;
 }
 
 @media only screen and (min-width: 992px) {
     #start-text {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 
     #phone {
         background-size: cover;
+    }
+
+    #discover a {
+        width: 120px;
+    }
+
+    #discover a img {
+        width: 118px !important;
+        max-width: 100% !important;
     }
 }
 
@@ -87,46 +162,13 @@
     background-color: #fdcc52;
 }
 
-#discover p {
-    font-size: 3rem;
-}
-
 @media only screen and (min-width: 992px) {
-    #discover img {
-        height: 10vh;
+    h1 {
+        font-size: 5rem;
     }
 
-    #discover p {
+    #unlimited h1 {
         font-size: 4rem;
-    }
-
-    #phone-unlimited{
-    }
-}
-
-btn {
-    font-family: 'Lato', Helvetica, Arial, sans-serif;
-}
-
-#discover img {
-    width: 40vw;
-}
-
-#unlimited p {
-    font-size: 3rem;
-}
-
-@media only screen and (min-width: 992px) {
-    #discover p {
-        font-size: 4rem;
-    }
-
-    #stop-waiting p {
-        font-size: 4rem;
-    }
-
-    .unlimited #phone {
-        height: 100%;
     }
 }
 
@@ -136,29 +178,31 @@ btn {
 }
 
 @media only screen and (min-width: 992px) {
-    #unlimited blockquote p {
+    #stop-waiting button {
+        font-size: 1rem !important;
+        margin-left: 3rem !important;
+    }
+
+    #stop-waiting h3 {
         font-size: 4rem;
     }
-
-    #unlimited p {
-        font-size: 1rem;
-    }
-}
-
-#unlimited p {
-    font-size: 1rem;
 }
 
 #stop-waiting {
+    font-family: 'Catamaran', Helvetica, Arial, sans-serif;
     background-image:linear-gradient(rgba(0, 0, 0, 0.45), 
     rgba(0, 0, 0, 0.45)), url('../img/bg-cta.jpg');
     background-size: cover;
 }
 
-
 #stop-waiting button {
     font-size: 0.5rem;
-    margin-left: 3rem !important;
+}
+
+#friends-social i {
+    width: 36px;
+    height: 36px;
+    opacity: 0.9;
 }
 
 #friends {
@@ -167,11 +211,11 @@ btn {
 
 #friends i {
     color: red;
+    
 }
 
-#friends p {
-    font-size: 2rem !important;
-    padding-bottom: 0 !important;
+#friends-social i:hover {
+    opacity: 1;
 }
 
 #footer {
@@ -182,6 +226,7 @@ btn {
 #footer a {
     text-decoration: none;
     color: white;
+    cursor: pointer;
 }
 
 #footer a:hover {

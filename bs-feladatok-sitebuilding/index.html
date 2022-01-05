@@ -12,48 +12,37 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="./css/style.css">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100;400&family=Lato:wght@300;400;700&family=Mulish:wght@300;400;500;700&display=swap"
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&family=Roboto:wght@300&display=swap"
         rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap" rel="stylesheet">
 
     <title>Sitebuilding</title>
     <script src="https://kit.fontawesome.com/fe69e6317d.js" crossorigin="anonymous"></script>
     <script src="https://code.iconify.design/2/2.1.0/iconify.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $('.sliding-link').on("click", function (e) {
+            e.preventDefault();
+            var dest = $(this).attr("href");
+            $("html, body").animate({
+                'scrollTop': $(dest).offset().top
+            }, 2000);
+        });
+    </script>
 </head>
 
 <body>
-    <div class="container-fluid bg-white" id="navbar-small">
-        <div class="container-lg">
-            <nav class="navbar navbar-expand-lg position-sticky d-flex justify-content-between navbar-light bg-light">
-                <a class="navbar-brand ml-5" id="navbar-brand" href="#">Start Bootstrap</a>
-                <button class="navbar-toggler mr-4 p-1" type="button" data-toggle="collapse" data-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    Menu<span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Download <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-        </div>
-        </nav>
-    </div>
+
 
     <main>
         <section>
-
-            <div class="container-fluid pb-5" id="start">
-                <div class="container-lg pt-0 mt-0" id="navbar-lg">
-                    <nav class="navbar navbar-expand-lg position-sticky d-flex justify-content-between navbar-light">
+            <div class="container-fluid bg-white" id="navbar-small">
+                <div class="container-lg">
+                    <nav
+                        class="navbar navbar-expand-lg position-sticky d-flex justify-content-between navbar-light bg-white ml-lg-0 pl-lg-0">
                         <a class="navbar-brand ml-5" id="navbar-brand" href="#">Start Bootstrap</a>
                         <button class="navbar-toggler mr-4 p-1" type="button" data-toggle="collapse"
                             data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -63,32 +52,62 @@
                         <div class="collapse navbar-collapse" id="navbarNav">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item active">
-                                    <a class="nav-link text-white" href="#">Download <span
+                                    <a class="nav-link sliding-link" href="#discover">Download <span
                                             class="sr-only">(current)</span></a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="#">Features</a>
+                                    <a class="nav-link sliding-link" href="#unlimited">Features</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link text-white" href="#">Contact</a>
+                                    <a class="nav-link sliding-link" href="#friends">Contact</a>
                                 </li>
                             </ul>
                         </div>
-                    </nav>
+                </div>
+                </nav>
+            </div>
+
+            <div class="container-fluid pb-5" id="start">
+                <div class="container-fluid navbar-lg" id="navbar-lg">
+                    <div class="container-lg pt-0 mt-0">
+                        <nav
+                            class="navbar navbar-expand-lg d-flex justify-content-between p-0 m-0">
+                            <a class="navbar-brand pl-0" id="navbar-brand-lg" href="#">Start Bootstrap</a>
+                            <!--<button class="navbar-toggler mr-4 p-1" type="button" data-toggle="collapse"
+                                data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                Menu<span class="navbar-toggler-icon"></span>
+                            </button>-->
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav ml-auto">
+                                    <li class="nav-item-lg active">
+                                        <a class="nav-link nav-link-lg sliding-link" href="#discover">Download <span
+                                                class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item-lg">
+                                        <a class="nav-link nav-link-lg sliding-link" href="#unlimited">Features</a>
+                                    </li>
+                                    <li class="nav-item-lg">
+                                        <a class="nav-link nav-link-lg sliding-link" href="#friends">Contact</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
                 </div>
                 <div class="container-lg">
                     <div class="row">
-                        <div class="col-lg-8 text-center">
+                        <div class="col-lg-8 text-center text-lg-left">
                             <blockquote class="blockquote">
-                                <p class="mb-0 text-white p-5 font-weight-light w-75 mx-auto text-lg-left my-lg-auto pl-lg-0pr-lg-5"
+                                <h3 class="mb-0 text-white p-1 font-weight-light mx-auto text-lg-left my-lg-auto pl-lg-0 pr-lg-5 ml-lg-0"
                                     id="start-text">
                                     New Age is an app landing page that will
                                     help you beautifully
                                     showcase your new mobile app, or anything else!
-                                </p>
+                                </h3>
                             </blockquote>
-                            <button style="text-transform: uppercase;"
-                                class="start btn btn-outline-light rounded-pill p-3 px-5">Start now for free!</button>
+                            <button class="start btn btn-outline-light rounded-pill py-3 px-5 mt-2">Start now for
+                                free!</button>
                         </div>
                         <div class="col-lg-4 text-center my-5 d-flex justify-content-center my-lg-auto" id="phone">
                             <img class="w-100" src="./img/demo-screen-1.jpg" alt="">
@@ -103,47 +122,51 @@
                 <div class="container-lg">
                     <div class="row">
                         <blockquote class="blockquote text-center mx-lg-auto">
-                            <p class="mb-0 text-white p-5 font-weight-light text-dark">
+                            <h1 class="mb-0 text-white p-5 font-weight-light text-dark">
                                 Discover what all the buzz is about!
-                            </p>
-                            <small class="px-5">Our app is avalaible on any movile device! Download now to get
-                                started!</small>
+                            </h1>
+                            <p class="px-5">Our app is avalaible on any movile device! Download now to get
+                                started!</p>
                         </blockquote>
                     </div>
                     <div class="row text-center">
-                        <div class="col-lg"></div>
-                        <div class="col-lg-4 d-flex flex-column justify-content-center flex-lg-row text-center">
-                            <img class="col-lg-6 mb-4 mr-lg-1 pr-lg-0 mx-auto" src="./img/google-play-badge.svg"
-                                alt="Google Play">
-                            <img class="col-lg-6 pb-5 p-lg-0 ml-lg-1 mx-auto" src="./img/app-store-badge.svg"
-                                alt="App Store">
+                        <div class="col-12 d-flex flex-column justify-content-center flex-lg-row text-center">
+                            <a href="https://play.google.com/" target="_blank">
+                                <img class="col-lg-4 mb-4 mr-lg-1 pr-lg-0 mx-auto w-50 w-lg-100"
+                                    src="./img/google-play-badge.svg" alt="Google Play">
+                            </a>
+                            <a href="https://www.apple.com/hu/app-store/" target="_blank">
+                                <img class="col-lg-6 mb-4 mr-lg-1 pr-lg-0 mx-auto w-50 w-lg-100"
+                                    src="./img/app-store-badge.svg" alt="App Store">
+                            </a>
                         </div>
-                        <div class="col-lg"></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section>
-            <div class="container-fluid py-5 text-center col-md-4" id="unlimited">
+            <div class="container py-5 text-center" id="unlimited">
                 <div class="row">
-                    <blockquote class="blockquote text-center">
-                        <div>
-                            <p
-                                class="mb-0 text-white p-5 font-weight-light text-dark mx-lg-auto text-left text-lg-center">
-                                Unlimited Features, Unlimited Fun
-                            </p>
-                            <small class="px-5 mx-lg-auto">Check out what you can do with this unlimited app
-                                theme!</small>
-                    </blockquote>
-                    <hr style="width: 20vw;" class="pt-2 mx-lg-auto">
+                    <div class="col-12">
+                        <blockquote class="blockquote text-center">
+                            <div>
+                                <h1
+                                    class="mb-0 text-white p-5 font-weight-normal text-dark mx-lg-auto text-center text-lg-center">
+                                    Unlimited Features, Unlimited Fun
+                                </h1>
+                                <p class="px-5 mx-lg-auto">Check out what you can do with this unlimited app
+                                    theme!</p>
+                        </blockquote>
+                        <hr style="width: 20vw;" class="pt-2 mx-lg-auto">
+                    </div>
                 </div>
                 <div class="row">
-                    <div class="col-lg text-center my-5 d-flex justify-content-center my-lg-auto mh-100"
+                    <div class="col-lg-4 text-center d-flex justify-content-center my-lg-auto mb-5"
                         id="phone-unlimited">
                         <img class="w-100" src="./img/demo-screen-1.jpg" alt="">
                     </div>
-                    <div class="col-lg text-center d-flex flex-column align-items-center icon">
+                    <div class="col-lg-8 text-center d-flex flex-column align-items-center icon">
                         <div class="row">
                             <div class="col-lg-6 py-5 py-lg-2">
                                 <span class="iconify" data-icon="bi:phone"></span>
@@ -167,8 +190,7 @@
                                 <span class="iconify" data-icon="ant-design:gift-outlined"></span>
                                 <h2>Free to Use</h2>
                                 <p class="w-50 mx-auto w-lg-75">As always, this theme is free to download and use for
-                                    any
-                                    purpose!
+                                    any purpose!
                                 </p>
                             </div>
                             <div class="col-lg-6 py-5 py-lg-2">
@@ -188,15 +210,14 @@
 
         <section>
             <div class="container-fluid  pb-5" id="stop-waiting">
-                <div class="container-lg">
+                <div class="container-lg text-left">
                     <blockquote class="blockquote">
-                        <p class="mb-0 text-white p-5 mt-5 font-weight-light text-left ml-0">
+                        <h3 class="mb-0 text-white py-5 mt-5 font-weight-light text-left ml-0 pl-lg-5">
                             Stop waiting.<br>
                             Start building
-                        </p>
+                        </h3>
                     </blockquote>
-                    <button style="text-transform: uppercase;"
-                        class="btn btn-outline-light rounded-pill py-2 px-5 ml-5">Let's get started!</button>
+                    <button class="btn btn-outline-light rounded-pill px-5 py-3 ml-0">Let's get started!</button>
                 </div>
             </div>
         </section>
@@ -204,14 +225,23 @@
         <section>
             <div class="container-fluid py-5 text-center" id="friends">
                 <blockquote class="blockquote text-center">
-                    <p style="font-size: 3rem;" class="mb-0 text-white p-5 font-weight-light text-dark">
+                    <h3 style="font-size: 3rem;" class="mb-0 text-white pt-5 pb-2 font-weight-light text-dark">
                         We <i class="fas fa-heart"></i> new friends!
-                    </p>
+                    </h3>
                 </blockquote>
-                <div class="container-fluid py-5 text-center" id="friends-social">
-                    <i class="fab fa-twitter text-white rounded-circle bg-primary p-2 mr-2"></i>
-                    <i class="fab fa-facebook-f text-white rounded-circle bg-primary p-2 mr-2 px-2"></i>
-                    <i class="fab fa-google-play text-white rounded-circle bg-danger p-2"></i>
+                <div class="container-fluid pb-5 pt-0 mt-0 text-center" id="friends-social">
+                    <a href="https://twitter.com/" target="_blank">
+                        <i class="fab fa-twitter text-white rounded-circle bg-primary p-2 mr-2" data-toggle="tooltip"
+                            data-placement="top" title="Twitter"></i>
+                    </a>
+                    <a href="https://www.facebook.com/" target="_blank">
+                        <i class="fab fa-facebook-f text-white rounded-circle bg-primary p-2 mr-2" data-toggle="tooltip"
+                            data-placement="top" title="Facebook"></i>
+                    </a>
+                    <a href="https://play.google.com/" target="_blank">
+                        <i class="fab fa-google-play text-white rounded-circle bg-danger p-2" data-toggle="tooltip"
+                            data-placement="top" title="Google Play"></i>
+                    </a>
                 </div>
             </div>
         </section>
@@ -219,10 +249,69 @@
 
     <footer>
         <div class="container-fluid py-5 text-center" id="footer">
-            <small>© Your Website 2018. All Rights Reserved.</small>
-            <a href="">Privacy</a> <a href="">Terms</a> <a href="">FAQ</a>
+            <small>© Your Website 2018. All Rights Reserved.</small><br>
+            <a id="privacy" data-toggle="modal" data-target="#privacy-modal">Privacy</a>
+            <a data-toggle="modal" data-target="#terms-modal">Terms</a>
+            <a data-toggle="modal" data-target="#faq-modal">FAQ</a>
         </div>
     </footer>
+
+    <div class="modal fade" id="privacy-modal" tabindex="-1" role="dialog" aria-labelledby="privacyModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="privacyModalLabel">Privacy</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero qui tenetur quos cumque,
+                    quidem aut illo mollitia harum at dicta reprehenderit quibusdam magni eveniet laboriosam ex.
+                    Nobis et officia vero.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="terms-modal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="termsModalLabel">Terms</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero qui tenetur quos cumque,
+                    quidem aut illo mollitia harum at dicta reprehenderit quibusdam magni eveniet laboriosam ex.
+                    Nobis et officia vero.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="faq-modal" tabindex="-1" role="dialog" aria-labelledby="faqModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="faqModalLabel">FAQ</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vero qui tenetur quos cumque,
+                    quidem aut illo mollitia harum at dicta reprehenderit quibusdam magni eveniet laboriosam ex.
+                    Nobis et officia vero.
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
@@ -233,6 +322,8 @@
         crossorigin="anonymous"></script>
 
     <script src="./js/main.js"></script>
+
+
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--

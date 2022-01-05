@@ -1,12 +1,23 @@
-const navSmall = document.querySelector('#navbar-small');
 const navLg = document.querySelector('#navbar-lg');
+const navBrand = document.querySelector('#navbar-brand-lg');
+const navLink = document.querySelectorAll('.nav-link-lg');
 
-window.addEventListener('scroll', function () {
-    if (document.body.scrollY == 0 && screen.width >= 992) {
-        navLg.style.display = "block";
-        navSmall.style.display = "none";
+document.addEventListener('scroll', () => {
+    event.preventDefault();
+
+    if (window.scrollY >= 150 && screen.width >= 992) {
+        navLg.style.backgroundColor = "white";
+        navBrand.style.color = "black";
+        navLink.forEach(item => {
+            item.style.color = "black";
+            item.style.fontWeight = "bold";
+        })
     } else {
-        navLg.style.display = "none";
-        navSmall.style.display = "block";
+        navLg.style.backgroundColor = "transparent";
+        navBrand.style.color = "#fdcc52";
+        navLink.forEach(item => {
+            item.style.color = "white";
+            item.style.fontWeight = "normal";
+        })
     }
 });
